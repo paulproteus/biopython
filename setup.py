@@ -27,7 +27,10 @@ import sys
 import os
 import shutil
 
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
 from distutils.core import Command
 from distutils.command.install import install
 from distutils.command.build_py import build_py
